@@ -18,7 +18,7 @@ public class AccountServiceImpl implements AccountService {
     private AccountMapper accountMapper;
 
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void deduct(String userId, int money) {
         log.info("开始扣款");
         try {
