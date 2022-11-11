@@ -23,3 +23,18 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1
+      namespace: ""
+      group: DEFAULT_GROUP
+      application: seata-tc-server
+      username: nacos
+      password: nacos
+  tx-service-group: seata-demo
+  service:
+    vgroup-mapping:
+      seata-demo : HZ
+  data-source-proxy-mode: XA
